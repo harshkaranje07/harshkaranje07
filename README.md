@@ -1,11 +1,9 @@
 <div align="center">
 
-  <!-- BANNER IMAGE -->
-  <img src="https://raw.githubusercontent.com/harshkaranje07/harshkaranje07/main/assets/banner.svg" alt="Harshwardhan Karanje Banner" width="100%" />
+  <img src="assets/banner.svg" alt="Harshwardhan Karanje Banner" width="100%" />
 
   <br/><br/>
 
-  <!-- HERO HEADER -->
   <p align="center">
     <img src="https://img.shields.io/badge/STATUS-ONLINE-FACC15?style=for-the-badge&labelColor=0D1117&color=FACC15" alt="Status"/>
     <img src="https://img.shields.io/badge/LOCATION-INDIA-3B82F6?style=for-the-badge&labelColor=0D1117&color=3B82F6" alt="Location"/>
@@ -13,11 +11,10 @@
 
   <h1>Harshwardhan Karanje</h1>
   <p><b>Computer Engineering Student • AI • Robotics • UAV Systems</b></p>
-  <p><i>Building autonomous UAVs, embedded avionics, edge AI, and full-stack telemetry systems.</i></p>
+  <p><i>Autonomous UAVs • Embedded Avionics • Edge AI • Full-Stack Telemetry</i></p>
 
   <br/>
 
-  <!-- CTA BUTTONS -->
   <p align="center">
     <a href="https://github.com/harshkaranje07" target="_blank">
       <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=FACC15&labelColor=0D1117" alt="GitHub"/>
@@ -38,7 +35,6 @@
 <hr/>
 <br/>
 
-<!-- TECH STACK -->
 <h3 align="center">Tech Stack</h3>
 
 <br/>
@@ -105,7 +101,6 @@
 <hr/>
 <br/>
 
-<!-- GITHUB STATS -->
 <h3 align="center">GitHub Statistics</h3>
 
 <br/>
@@ -129,7 +124,6 @@
 <hr/>
 <br/>
 
-<!-- FEATURED PROJECTS -->
 <h3 align="center">Featured Projects</h3>
 
 <br/>
@@ -190,7 +184,6 @@
 <hr/>
 <br/>
 
-<!-- CURRENT FOCUS -->
 <h3 align="center">Current Focus</h3>
 
 <br/>
@@ -199,9 +192,9 @@
   <table width="85%">
     <tr>
       <td>
-        • <b>ROS 2 &amp; PX4 Autopilot:</b> LiDAR SLAM and autonomous trajectory planning.<br/>
-        • <b>Edge AI:</b> TensorRT neural network quantization on embedded platforms.<br/>
-        • <b>Telemetry Web Applications:</b> Real-time 3D flight instrumentation dashboards.
+        • <b>ROS 2 &amp; PX4 Autopilot:</b> LiDAR SLAM &amp; autonomous path planning.<br/>
+        • <b>Edge AI:</b> Neural network quantization on Jetson &amp; microcontrollers.<br/>
+        • <b>Telemetry Web Apps:</b> Real-time 3D flight control dashboards.
       </td>
     </tr>
   </table>
@@ -211,13 +204,14 @@
 <hr/>
 <br/>
 
-<!-- CONTRIBUTION SNAKE -->
 <h3 align="center">Contribution Activity</h3>
 
 <br/>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/harshkaranje07/harshkaranje07/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake" width="100%"/>
+  <img src="assets/github-contribution-grid-snake.svg" alt="Contribution Snake" width="100%"/>
+  <br/><br/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=harshkaranje07&theme=react-dark&color=FACC15&line=FACC15&point=FACC15&bg_color=0D1117&hide_border=true" alt="Activity Graph" width="100%"/>
 </div>
 
 <br/>
