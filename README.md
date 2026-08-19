@@ -198,12 +198,12 @@ PX4, ArduPilot, Offboard control, Gazebo simulation, quadcopter dynamics
 
 <div align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=harshkaranje07&show_icons=true&bg_color=0D1117&title_color=FACC15&text_color=8B949E&icon_color=FACC15&border_color=21262D&rank_icon=github&card_width=420"
+    src="https://github-readme-stats-fast.vercel.app/api?username=harshkaranje07&show_icons=true&bg_color=0D1117&title_color=FACC15&text_color=8B949E&icon_color=FACC15&border_color=21262D&rank_icon=github"
     height="165" alt="GitHub Stats"
   />
   &nbsp;
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=harshkaranje07&layout=compact&bg_color=0D1117&title_color=FACC15&text_color=8B949E&border_color=21262D&card_width=340"
+    src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=harshkaranje07&layout=compact&bg_color=0D1117&title_color=FACC15&text_color=8B949E&border_color=21262D"
     height="165" alt="Top Languages"
   />
 </div>
@@ -212,8 +212,8 @@ PX4, ArduPilot, Offboard control, Gazebo simulation, quadcopter dynamics
 
 <div align="center">
   <img
-    src="https://github-readme-streak-stats.herokuapp.com/?user=harshkaranje07&background=0D1117&ring=FACC15&fire=FACC15&currStreakLabel=FACC15&sideLabels=8B949E&sideNums=F8F8F8&dates=3D444D&border=21262D"
-    height="155" alt="Streak"
+    src="https://streak-stats.vercel.app/?user=harshkaranje07&theme=dark&background=0D1117&ring=FACC15&fire=FACC15&currStreakLabel=FACC15&sideLabels=8B949E&sideNums=F8F8F8&dates=3D444D&border=21262D"
+    height="155" alt="Contribution Streak"
   />
 </div>
 
