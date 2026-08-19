@@ -180,10 +180,12 @@ PX4, ArduPilot, Offboard control, Gazebo simulation, quadcopter dynamics
 <br/>
 
 ```
-  Autonomous UAV Platform       ROS 2 Nav2 · PX4 Offboard · LiDAR SLAM · Collision Avoidance
-  Edge AI Vision Engine         YOLOv8 · TensorRT · ESP32-S3 · Real-time Object Tracking
-  Embedded Telemetry Hub        FreeRTOS · MQTT · Sensor Fusion · Ground Station Interface
-  Engineering Portfolio         Next.js · Vercel · Live at my-portfolio-seven-henna-92.vercel.app
+  Engineering Portfolio Website         Next.js · React · Three.js · Vercel Deployment
+  Autonomous UAV Platform               ROS 2 Nav2 · PX4 Offboard · SLAM & Trajectory Planning
+  AI & Computer Vision Experiments     YOLOv8 · MediaPipe · PyTorch · Edge Inference
+  Embedded IoT Systems                  ESP32 / STM32 · FreeRTOS · MQTT · Sensor Processing
+  Flight Control & Avionics Research   ArduPilot · MAVLink Telemetry · Quadcopter Physics
+  DSA Practice                          C++ Algorithms & Competitive Programming Patterns
 ```
 
 <br/>
