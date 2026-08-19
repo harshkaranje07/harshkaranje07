@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="YOUR_BANNER_URL_HERE" width="100%" />
+</p>
+
 <div align="center">
 
 # Harshwardhan Karanje
@@ -31,6 +35,14 @@ I'm passionate about building real-world engineering solutions through software 
 
 </p>
 
+ ## 🚀 Current Focus
+
+- 🤖 Artificial Intelligence & Machine Learning
+- 🚁 Autonomous UAV Systems
+- ⚙️ Flight Control Systems & Drone Avionics
+- 🌐 Modern Full-Stack Web Development
+- 📡 Embedded Systems & IoT
+
 ## 📊 GitHub Statistics
 
 <p align="center">
@@ -44,5 +56,26 @@ I'm passionate about building real-world engineering solutions through software 
 <p align="center">
 
 <img src="https://streak-stats.demolab.com?user=harshkaranje07&theme=github-dark&hide_border=true"/>
+
+</p>
+
+<p align="center">
+
+<a href="https://github.com/harshkaranje07">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+
+</a>
+
+<a href="https://www.linkedin.com/in/YOUR-LINKEDIN">
+
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+
+</a>
+
+<a href="mailto:YOUR_EMAIL">
+
+<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+
+</a>
 
 </p>
