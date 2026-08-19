@@ -1,106 +1,150 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="100%">
   <defs>
-    <style>
-      .bg { fill: #0B0F17; }
-      .grid-line { stroke: #1E293B; stroke-width: 0.5; stroke-dasharray: 2 4; }
-      .accent { stroke: #FACC15; stroke-width: 1.5; }
-      .accent-fill { fill: #FACC15; }
-      .text-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif; font-weight: 800; font-size: 34px; fill: #F8FAFC; }
-      .text-sub { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; fill: #FACC15; letter-spacing: 2px; }
-      .text-mono { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #94A3B8; }
-      .text-dim { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #475569; }
-      .box { fill: #0F172A; stroke: #1E293B; stroke-width: 1; rx: 4px; }
-    </style>
-
-    <linearGradient id="bannerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080C14"/>
-      <stop offset="100%" stop-color="#0E1420"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B12"/>
+      <stop offset="100%" stop-color="#0C1220"/>
     </linearGradient>
+    <linearGradient id="glowLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FACC15" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#FACC15" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#FACC15" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FACC15" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0F1829" stroke-width="1"/>
+    </pattern>
+    <mask id="fade">
+      <linearGradient id="fadeMask" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="white"/>
+        <stop offset="55%" stop-color="white"/>
+        <stop offset="90%" stop-color="black"/>
+      </linearGradient>
+      <rect width="1200" height="280" fill="url(#fadeMask)"/>
+    </mask>
   </defs>
 
-  <!-- Background Base -->
-  <rect width="1200" height="300" rx="8" fill="url(#bannerGrad)" stroke="#1F2937" stroke-width="1.2"/>
+  <!-- Background -->
+  <rect width="1200" height="280" fill="url(#bg)"/>
+  <rect width="1200" height="280" fill="url(#grid)" mask="url(#fade)" opacity="0.6"/>
 
-  <!-- Minimal Technical Layout Lines -->
-  <line x1="40" y1="20" x2="1160" y2="20" class="grid-line"/>
-  <line x1="40" y1="280" x2="1160" y2="280" class="grid-line"/>
-  <line x1="40" y1="20" x2="40" y2="280" class="grid-line"/>
-  <line x1="1160" y1="20" x2="1160" y2="280" class="grid-line"/>
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="2" fill="url(#glowLine)" opacity="0.6"/>
+  <!-- Bottom accent line -->
+  <rect x="0" y="278" width="1200" height="2" fill="url(#glowLine)" opacity="0.3"/>
 
-  <!-- Corner Brackets -->
-  <path d="M 34 50 L 34 34 L 50 34" fill="none" stroke="#FACC15" stroke-width="2"/>
-  <path d="M 1166 50 L 1166 34 L 1150 34" fill="none" stroke="#FACC15" stroke-width="2"/>
-  <path d="M 34 250 L 34 266 L 50 266" fill="none" stroke="#FACC15" stroke-width="2"/>
-  <path d="M 1166 250 L 1166 266 L 1150 266" fill="none" stroke="#FACC15" stroke-width="2"/>
+  <!-- Left vertical accent bar -->
+  <rect x="64" y="0" width="2" height="280" fill="#FACC15" opacity="0.08"/>
 
-  <!-- LEFT COLUMN: TYPOGRAPHY & CORE GOALS -->
-  <g transform="translate(60, 55)">
-    <!-- Status Tag -->
-    <rect x="0" y="0" width="210" height="22" rx="3" fill="#1E293B" fill-opacity="0.8" stroke="#334155" stroke-width="0.8"/>
-    <circle cx="12" cy="11" r="3" fill="#FACC15"/>
-    <text x="22" y="15" class="text-sub" font-size="10" letter-spacing="1">SYSTEM ONLINE // PORTFOLIO</text>
-
-    <!-- Name & Subtitle -->
-    <text x="0" y="58" class="text-title">Harshwardhan Karanje</text>
-    <text x="0" y="82" class="text-sub">COMPUTER ENGINEERING STUDENT</text>
-
-    <!-- Engineering Directive Box -->
-    <g transform="translate(0, 105)">
-      <rect x="0" y="0" width="460" height="68" class="box"/>
-      <path d="M 0 0 L 80 0" stroke="#FACC15" stroke-width="2"/>
-      
-      <text x="14" y="22" class="text-mono">OBJECTIVE: <tspan fill="#F8FAFC">Autonomous UAVs • Robotics • Embedded IoT</tspan></text>
-      <text x="14" y="42" class="text-mono">FOCUS: <tspan fill="#FACC15">Machine Learning &amp; Computer Vision Systems</tspan></text>
-      <text x="14" y="58" class="text-mono">STACK: <tspan fill="#38BDF8">C++ / Python / ROS 2 / PyTorch / ESP32</tspan></text>
-    </g>
+  <!-- STATUS PILL -->
+  <g transform="translate(80, 44)">
+    <rect x="0" y="0" width="8" height="8" rx="2" fill="#FACC15"/>
+    <text x="16" y="8" font-family="'JetBrains Mono', 'SF Mono', 'Fira Mono', monospace" font-size="10" font-weight="500" fill="#64748B" letter-spacing="2">ENGINEERING PORTFOLIO — ACTIVE</text>
   </g>
 
-  <!-- RIGHT COLUMN: SCHEMATIC QUADCOPTER DIAGRAM -->
-  <g transform="translate(930, 150)">
-    <!-- Radar Circle Rings -->
-    <circle cx="0" cy="0" r="125" fill="none" stroke="#1E293B" stroke-width="1"/>
-    <circle cx="0" cy="0" r="85" fill="none" stroke="#FACC15" stroke-width="0.8" stroke-opacity="0.25" stroke-dasharray="3 3"/>
-    <circle cx="0" cy="0" r="45" fill="none" stroke="#1E293B" stroke-width="1"/>
-    
+  <!-- NAME -->
+  <text x="80" y="118" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="800" fill="#F1F5F9" letter-spacing="-1">Harshwardhan Karanje</text>
+
+  <!-- TITLE -->
+  <text x="82" y="150" font-family="'JetBrains Mono', 'SF Mono', monospace" font-size="14" font-weight="400" fill="#FACC15" letter-spacing="3">COMPUTER ENGINEERING STUDENT</text>
+
+  <!-- Divider rule -->
+  <rect x="80" y="168" width="480" height="1" fill="#1E293B"/>
+  <rect x="80" y="168" width="120" height="1" fill="#FACC15" opacity="0.7"/>
+
+  <!-- FOCUS TAGS -->
+  <text x="80" y="192" font-family="'Inter', sans-serif" font-size="13" fill="#94A3B8" letter-spacing="0.5">
+    <tspan fill="#CBD5E1">Autonomous UAVs</tspan>
+    <tspan fill="#334155">  ·  </tspan>
+    <tspan fill="#CBD5E1">Embedded Systems</tspan>
+    <tspan fill="#334155">  ·  </tspan>
+    <tspan fill="#CBD5E1">IoT</tspan>
+    <tspan fill="#334155">  ·  </tspan>
+    <tspan fill="#CBD5E1">Machine Learning</tspan>
+  </text>
+
+  <!-- MISSION LINE -->
+  <text x="80" y="220" font-family="'Inter', sans-serif" font-size="12" fill="#475569">
+    Building intelligent systems at the intersection of hardware and autonomous intelligence.
+  </text>
+
+  <!-- STAT CHIPS -->
+  <g transform="translate(80, 242)">
+    <!-- Chip 1 -->
+    <rect x="0" y="0" width="130" height="24" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="10" y="16" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">STACK</text>
+    <text x="50" y="16" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">C++ · Python · ROS 2</text>
+
+    <!-- Chip 2 -->
+    <rect x="140" y="0" width="130" height="24" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="150" y="16" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">DOMAIN</text>
+    <text x="198" y="16" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">Robotics · AI</text>
+
+    <!-- Chip 3 -->
+    <rect x="280" y="0" width="130" height="24" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="290" y="16" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">PLATFORM</text>
+    <text x="348" y="16" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">ESP32 · PX4</text>
+  </g>
+
+  <!-- RIGHT: SCHEMATIC UAV WIREFRAME -->
+  <g transform="translate(960, 140)" opacity="0.85">
+    <!-- Outer orbit ring -->
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#0F1829" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="75" fill="none" stroke="#FACC15" stroke-width="0.6" stroke-dasharray="4 6" stroke-opacity="0.3"/>
+    <circle cx="0" cy="0" r="38" fill="none" stroke="#1E293B" stroke-width="1"/>
+
     <!-- Crosshairs -->
-    <line x1="-135" y1="0" x2="135" y2="0" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 3"/>
-    <line x1="0" y1="-135" x2="0" y2="135" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 3"/>
+    <line x1="-120" y1="0" x2="120" y2="0" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="3 5"/>
+    <line x1="0" y1="-120" x2="0" y2="120" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="3 5"/>
 
-    <!-- Quadcopter Body Schematic -->
-    <polygon points="0,-16 12,-12 16,0 12,12 0,16 -12,12 -16,0 -12,-12" fill="#0D1117" stroke="#FACC15" stroke-width="1.5"/>
-    <circle cx="0" cy="0" r="3" fill="#FACC15"/>
+    <!-- UAV Airframe -->
+    <polygon points="0,-14 11,-11 14,0 11,11 0,14 -11,11 -14,0 -11,-11" fill="#070B12" stroke="#FACC15" stroke-width="1.4" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="3.5" fill="#FACC15" filter="url(#glow)"/>
 
-    <!-- 4 Rotor Spar Arms -->
-    <line x1="9" y1="-9" x2="58" y2="-58" stroke="#94A3B8" stroke-width="2"/>
-    <line x1="9" y1="9" x2="58" y2="58" stroke="#94A3B8" stroke-width="2"/>
-    <line x1="-9" y1="9" x2="-58" y2="58" stroke="#94A3B8" stroke-width="2"/>
-    <line x1="-9" y1="-9" x2="-58" y2="-58" stroke="#94A3B8" stroke-width="2"/>
+    <!-- 4 Arms -->
+    <line x1="10" y1="-10" x2="60" y2="-60" stroke="#1E293B" stroke-width="3"/>
+    <line x1="10" y1="-10" x2="60" y2="-60" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="4 3" stroke-opacity="0.5"/>
+
+    <line x1="10" y1="10" x2="60" y2="60" stroke="#1E293B" stroke-width="3"/>
+    <line x1="10" y1="10" x2="60" y2="60" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="4 3" stroke-opacity="0.5"/>
+
+    <line x1="-10" y1="10" x2="-60" y2="60" stroke="#1E293B" stroke-width="3"/>
+    <line x1="-10" y1="10" x2="-60" y2="60" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="4 3" stroke-opacity="0.5"/>
+
+    <line x1="-10" y1="-10" x2="-60" y2="-60" stroke="#1E293B" stroke-width="3"/>
+    <line x1="-10" y1="-10" x2="-60" y2="-60" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="4 3" stroke-opacity="0.5"/>
 
     <!-- Rotors -->
-    <circle cx="58" cy="-58" r="8" fill="#1E293B" stroke="#FACC15" stroke-width="1"/>
-    <circle cx="58" cy="-58" r="26" fill="none" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="3 3" stroke-opacity="0.5"/>
+    <circle cx="60" cy="-60" r="7" fill="#0C1220" stroke="#FACC15" stroke-width="1.2" filter="url(#glow)"/>
+    <circle cx="60" cy="-60" r="24" fill="none" stroke="#FACC15" stroke-width="0.7" stroke-dasharray="3 4" stroke-opacity="0.55"/>
 
-    <circle cx="58" cy="58" r="8" fill="#1E293B" stroke="#FACC15" stroke-width="1"/>
-    <circle cx="58" cy="58" r="26" fill="none" stroke="#64748B" stroke-width="0.8" stroke-dasharray="3 3" stroke-opacity="0.5"/>
+    <circle cx="60" cy="60" r="7" fill="#0C1220" stroke="#475569" stroke-width="1.2"/>
+    <circle cx="60" cy="60" r="24" fill="none" stroke="#475569" stroke-width="0.7" stroke-dasharray="3 4" stroke-opacity="0.4"/>
 
-    <circle cx="-58" cy="58" r="8" fill="#1E293B" stroke="#FACC15" stroke-width="1"/>
-    <circle cx="-58" cy="58" r="26" fill="none" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="3 3" stroke-opacity="0.5"/>
+    <circle cx="-60" cy="60" r="7" fill="#0C1220" stroke="#FACC15" stroke-width="1.2" filter="url(#glow)"/>
+    <circle cx="-60" cy="60" r="24" fill="none" stroke="#FACC15" stroke-width="0.7" stroke-dasharray="3 4" stroke-opacity="0.55"/>
 
-    <circle cx="-58" cy="-58" r="8" fill="#1E293B" stroke="#FACC15" stroke-width="1"/>
-    <circle cx="-58" cy="-58" r="26" fill="none" stroke="#64748B" stroke-width="0.8" stroke-dasharray="3 3" stroke-opacity="0.5"/>
+    <circle cx="-60" cy="-60" r="7" fill="#0C1220" stroke="#475569" stroke-width="1.2"/>
+    <circle cx="-60" cy="-60" r="24" fill="none" stroke="#475569" stroke-width="0.7" stroke-dasharray="3 4" stroke-opacity="0.4"/>
 
-    <!-- Telemetry Callout Tags -->
-    <polyline points="58,-66 85,-90 135,-90" fill="none" stroke="#FACC15" stroke-width="0.8"/>
-    <rect x="135" y="-100" width="100" height="18" rx="2" fill="#0F172A" stroke="#334155" stroke-width="0.8"/>
-    <text x="141" y="-88" class="text-mono" fill="#FACC15" font-size="8.5">UAV AVIONICS</text>
+    <!-- Heading Indicator -->
+    <polygon points="-3,-14 0,-24 3,-14" fill="#FACC15" filter="url(#glow)"/>
 
-    <polyline points="-12,-12 -90,-40 -130,-40" fill="none" stroke="#64748B" stroke-width="0.8"/>
-    <rect x="-215" y="-50" width="85" height="18" rx="2" fill="#0F172A" stroke="#334155" stroke-width="0.8"/>
-    <text x="-210" y="-38" class="text-mono" fill="#94A3B8" font-size="8.5">PX4 / ROS 2</text>
+    <!-- Callout Tags -->
+    <polyline points="60,-67 88,-90 130,-90" fill="none" stroke="#FACC15" stroke-width="0.7" stroke-opacity="0.6"/>
+    <text x="134" y="-86" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#FACC15" font-weight="500" letter-spacing="0.5">PX4 AUTOPILOT</text>
+
+    <polyline points="-12,-11 -88,-40 -120,-40" fill="none" stroke="#475569" stroke-width="0.7"/>
+    <text x="-188" y="-36" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#64748B" letter-spacing="0.5">MAVLink 2.0</text>
+
+    <polyline points="60,67 88,90 130,90" fill="none" stroke="#475569" stroke-width="0.7"/>
+    <text x="134" y="94" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#64748B" letter-spacing="0.5">ROS 2 BRIDGE</text>
   </g>
 
-  <!-- Bottom Technical Coordinate Footer -->
-  <g transform="translate(60, 272)">
-    <text x="0" y="0" class="text-dim">MAHARASHTRA, INDIA | LAT: 19.0760° N | LON: 72.8777° E | ENGINEERING PORTFOLIO</text>
-  </g>
+  <!-- Footer coords -->
+  <text x="80" y="272" font-family="'JetBrains Mono', monospace" font-size="9" fill="#1E293B" letter-spacing="1">INDIA — 19.076°N 72.877°E</text>
+  <text x="1100" y="272" font-family="'JetBrains Mono', monospace" font-size="9" fill="#1E293B" letter-spacing="1" text-anchor="end">v3.0</text>
 </svg>
