@@ -1,242 +1,221 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="100%">
   <defs>
-    <!-- Base Gradients -->
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%"   stop-color="#060A10"/>
-      <stop offset="100%" stop-color="#0C1220"/>
+
+    <!-- ── GRADIENTS ── -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%"   stop-color="#05080F"/>
+      <stop offset="100%" stop-color="#0B1120"/>
     </linearGradient>
-    <linearGradient id="topBar" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%"   stop-color="#FACC15" stop-opacity="0"/>
-      <stop offset="25%"  stop-color="#FACC15" stop-opacity="0.8"/>
-      <stop offset="75%"  stop-color="#FACC15" stop-opacity="0.8"/>
+      <stop offset="20%"  stop-color="#FACC15" stop-opacity="0.9"/>
+      <stop offset="80%"  stop-color="#FACC15" stop-opacity="0.9"/>
       <stop offset="100%" stop-color="#FACC15" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="divider" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#21262D" stop-opacity="0"/>
-      <stop offset="30%"  stop-color="#21262D"/>
-      <stop offset="70%"  stop-color="#21262D"/>
-      <stop offset="100%" stop-color="#21262D" stop-opacity="0"/>
-    </linearGradient>
-
-    <!-- Grid Pattern -->
-    <pattern id="grid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#0F1829" stroke-width="0.8"/>
-    </pattern>
-    <!-- Grid fade mask — fades out on right side -->
-    <linearGradient id="gridFade" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%"  stop-color="white" stop-opacity="1"/>
-      <stop offset="50%" stop-color="white" stop-opacity="0.6"/>
-      <stop offset="85%" stop-color="white" stop-opacity="0"/>
+      <stop offset="52%" stop-color="white" stop-opacity="0.7"/>
+      <stop offset="78%" stop-color="white" stop-opacity="0"/>
     </linearGradient>
-    <mask id="gridMask">
-      <rect width="1200" height="300" fill="url(#gridFade)"/>
-    </mask>
 
-    <!-- Glow filter for accent elements -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <!-- ── GRID ── -->
+    <pattern id="g" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44,0 L0,0 0,44" fill="none" stroke="#0D1825" stroke-width="0.7"/>
+    </pattern>
+    <mask id="gm"><rect width="1200" height="280" fill="url(#fade)"/></mask>
+
+    <!-- ── GLOW ── -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="dimglow">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+
   </defs>
 
-  <!-- ── BASE LAYER ── -->
-  <rect width="1200" height="300" fill="url(#bg)"/>
-  <rect width="1200" height="300" fill="url(#grid)" mask="url(#gridMask)"/>
+  <!-- BASE -->
+  <rect width="1200" height="280" fill="url(#bg)"/>
+  <rect width="1200" height="280" fill="url(#g)" mask="url(#gm)"/>
 
-  <!-- Top & bottom accent rule -->
-  <rect x="0" y="0"   width="1200" height="1.5" fill="url(#topBar)"/>
-  <rect x="0" y="298.5" width="1200" height="1.5" fill="url(#topBar)" opacity="0.3"/>
+  <!-- Top rule -->
+  <rect x="0" y="0" width="1200" height="1.5" fill="url(#accentLine)"/>
 
-  <!-- Left accent column -->
-  <rect x="0" y="0" width="3" height="300" fill="#FACC15" opacity="0.12"/>
+  <!-- Left stripe -->
+  <rect x="0" y="0" width="2.5" height="280" fill="#FACC15" opacity="0.15"/>
 
-  <!-- ── LEFT: TYPOGRAPHY ── -->
-  <!-- Status indicator -->
-  <g transform="translate(56, 46)">
-    <rect x="0" y="-9" width="7" height="7" rx="1.5" fill="#FACC15" filter="url(#glow)"/>
-    <text x="16" y="-1"
-      font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Helvetica,Arial,sans-serif"
-      font-size="10" font-weight="500" fill="#6B7280" letter-spacing="2.5">
-      ENGINEERING PORTFOLIO — 2026
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- LEFT PANEL — TYPOGRAPHY                     -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Eyebrow tag -->
+  <g transform="translate(52, 44)">
+    <rect x="0" y="-10" width="6" height="6" rx="1" fill="#FACC15" filter="url(#glow)"/>
+    <text x="16" y="-2"
+      font-family="'SF Mono','JetBrains Mono','Fira Code',monospace"
+      font-size="9.5" font-weight="400" fill="#484F58" letter-spacing="2.8">
+      PORTFOLIO  ·  2026  ·  INDIA
     </text>
   </g>
 
-  <!-- Name -->
-  <text x="56" y="126"
-    font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Helvetica,Arial,sans-serif"
-    font-size="54" font-weight="800" fill="#F8F8F8" letter-spacing="-1.5">
+  <!-- Name — hero weight -->
+  <text x="52" y="116"
+    font-family="-apple-system,'Inter','Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="56" font-weight="800" fill="#F8F8F8" letter-spacing="-2">
     Harshwardhan Karanje
   </text>
 
-  <!-- Title -->
-  <text x="58" y="160"
-    font-family="'JetBrains Mono','SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace"
-    font-size="13" font-weight="500" fill="#FACC15" letter-spacing="3.5">
+  <!-- Role — monospace accent -->
+  <text x="54" y="150"
+    font-family="'SF Mono','JetBrains Mono','Fira Code',monospace"
+    font-size="12.5" font-weight="500" fill="#FACC15" letter-spacing="4">
     COMPUTER ENGINEERING STUDENT
   </text>
 
-  <!-- Thin horizontal rule -->
-  <rect x="56" y="178" width="500" height="1" fill="url(#divider)"/>
-  <!-- Yellow accent on rule -->
-  <rect x="56" y="178" width="96" height="1" fill="#FACC15" opacity="0.6"/>
+  <!-- Hairline separator -->
+  <line x1="52" y1="168" x2="540" y2="168" stroke="#21262D" stroke-width="1"/>
+  <line x1="52" y1="168" x2="112" y2="168" stroke="#FACC15" stroke-width="1.5" opacity="0.7"/>
 
-  <!-- Focus tags -->
-  <text x="56" y="202"
-    font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Helvetica,Arial,sans-serif"
-    font-size="13.5" fill="#8B949E" letter-spacing="0.3">
-    <tspan fill="#C9D1D9">AI</tspan>
-    <tspan fill="#30363D">  ·  </tspan>
-    <tspan fill="#C9D1D9">Robotics</tspan>
-    <tspan fill="#30363D">  ·  </tspan>
-    <tspan fill="#C9D1D9">UAV Systems</tspan>
-    <tspan fill="#30363D">  ·  </tspan>
-    <tspan fill="#C9D1D9">Embedded Systems</tspan>
+  <!-- Domain tags -->
+  <text x="52" y="190"
+    font-family="-apple-system,'Inter',Helvetica,Arial,sans-serif"
+    font-size="13" fill="#8B949E" letter-spacing="0.3">
+    <tspan fill="#C9D1D9">AI</tspan><tspan>  ·  </tspan>
+    <tspan fill="#C9D1D9">Robotics</tspan><tspan>  ·  </tspan>
+    <tspan fill="#C9D1D9">UAV Systems</tspan><tspan>  ·  </tspan>
+    <tspan fill="#C9D1D9">Embedded</tspan><tspan>  ·  </tspan>
+    <tspan fill="#C9D1D9">IoT</tspan>
   </text>
 
   <!-- Tagline -->
-  <text x="56" y="228"
-    font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Helvetica,Arial,sans-serif"
-    font-size="12.5" fill="#484F58" letter-spacing="0.2">
+  <text x="52" y="214"
+    font-family="-apple-system,'Inter',Helvetica,Arial,sans-serif"
+    font-size="12" fill="#3D444D" letter-spacing="0.1">
     Building intelligent systems at the intersection of software, embedded electronics, and autonomous flight.
   </text>
 
-  <!-- Spec chips row -->
-  <g transform="translate(56, 250)">
-    <!-- Chip 1 -->
-    <rect x="0"   y="0" width="108" height="22" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="1"/>
-    <text x="10"  y="15" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#484F58" letter-spacing="0.5">STACK </text>
-    <text x="46"  y="15" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#8B949E">C++ · Python</text>
-    <!-- Chip 2 -->
-    <rect x="116" y="0" width="108" height="22" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="1"/>
-    <text x="126" y="15" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#484F58" letter-spacing="0.5">FC    </text>
-    <text x="154" y="15" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#8B949E">ROS 2 · PX4</text>
-    <!-- Chip 3 -->
-    <rect x="232" y="0" width="108" height="22" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="1"/>
-    <text x="242" y="15" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#484F58" letter-spacing="0.5">MCU   </text>
-    <text x="274" y="15" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#8B949E">ESP32 · STM32</text>
+  <!-- Info chips -->
+  <g transform="translate(52, 236)">
+    <rect x="0"   y="0" width="100" height="20" rx="3" fill="#0D1117" stroke="#1C2128" stroke-width="1"/>
+    <text x="10"  y="14" font-family="'SF Mono','JetBrains Mono',monospace" font-size="9" fill="#484F58">C++ · Python · JS</text>
+
+    <rect x="108" y="0" width="100" height="20" rx="3" fill="#0D1117" stroke="#1C2128" stroke-width="1"/>
+    <text x="118" y="14" font-family="'SF Mono','JetBrains Mono',monospace" font-size="9" fill="#484F58">ROS 2 · PX4 · MAVLink</text>
+
+    <rect x="216" y="0" width="100" height="20" rx="3" fill="#0D1117" stroke="#1C2128" stroke-width="1"/>
+    <text x="226" y="14" font-family="'SF Mono','JetBrains Mono',monospace" font-size="9" fill="#484F58">ESP32 · STM32 · RTOS</text>
   </g>
 
-  <!-- ── RIGHT: UAV SCHEMATIC ── -->
-  <g transform="translate(940, 150)">
-    <!-- Outer boundary ring (very faint) -->
-    <circle cx="0" cy="0" r="128" fill="none" stroke="#0F1829" stroke-width="1.5"/>
-    <!-- Radar ring 2 -->
-    <circle cx="0" cy="0" r="94" fill="none" stroke="#FACC15" stroke-width="0.6"
-            stroke-dasharray="5 7" stroke-opacity="0.18"/>
-    <!-- Radar ring 3 -->
-    <circle cx="0" cy="0" r="58" fill="none" stroke="#21262D" stroke-width="1" stroke-opacity="0.9"/>
-    <!-- Radar ring 4 (inner) -->
-    <circle cx="0" cy="0" r="26" fill="none" stroke="#161B22" stroke-width="1.2"/>
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- RIGHT PANEL — UAV SCHEMATIC                 -->
+  <!-- ═══════════════════════════════════════════ -->
 
-    <!-- Crosshair lines -->
-    <line x1="-138" y1="0" x2="138" y2="0" stroke="#161B22" stroke-width="0.8" stroke-dasharray="3 6"/>
-    <line x1="0" y1="-138" x2="0" y2="138" stroke="#161B22" stroke-width="0.8" stroke-dasharray="3 6"/>
+  <g transform="translate(938, 140)">
 
-    <!-- Sweep indicator line -->
-    <line x1="0" y1="0" x2="85" y2="-85" stroke="#FACC15" stroke-width="0.9"
-          stroke-opacity="0.45"/>
-    <circle cx="85" cy="-85" r="2.5" fill="#FACC15" fill-opacity="0.6"/>
+    <!-- Radar rings (outermost → innermost) -->
+    <circle cx="0" cy="0" r="122" fill="none" stroke="#0D1825" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="90"  fill="none" stroke="#FACC15" stroke-width="0.5"
+            stroke-dasharray="4 8" stroke-opacity="0.18"/>
+    <circle cx="0" cy="0" r="58"  fill="none" stroke="#161B22" stroke-width="1"/>
+    <circle cx="0" cy="0" r="28"  fill="none" stroke="#0D1117" stroke-width="1.5"/>
 
-    <!-- ── PCB / CIRCUIT TRACES ── -->
-    <!-- Trace from body to top-right arm -->
-    <polyline points="10,-10 28,-28 62,-62" fill="none" stroke="#1C2633" stroke-width="1.5"/>
-    <!-- Node points on trace -->
-    <circle cx="28" cy="-28" r="1.8" fill="#21262D" stroke="#FACC15" stroke-width="0.6" stroke-opacity="0.5"/>
+    <!-- Crosshair axes -->
+    <line x1="-130" y1="0" x2="130" y2="0" stroke="#161B22" stroke-width="0.7" stroke-dasharray="2 7"/>
+    <line x1="0" y1="-130" x2="0" y2="130" stroke="#161B22" stroke-width="0.7" stroke-dasharray="2 7"/>
 
-    <!-- Trace from body to bottom-right -->
-    <polyline points="10,10 28,28 62,62" fill="none" stroke="#1C2633" stroke-width="1.5"/>
-    <circle cx="28" cy="28" r="1.8" fill="#21262D" stroke="#21262D" stroke-width="0.6"/>
+    <!-- Sweep ray -->
+    <line x1="0" y1="0" x2="86" y2="-86" stroke="#FACC15" stroke-width="0.8" stroke-opacity="0.4"/>
+    <circle cx="86" cy="-86" r="2" fill="#FACC15" fill-opacity="0.5"/>
 
-    <!-- Trace from body to bottom-left -->
-    <polyline points="-10,10 -28,28 -62,62" fill="none" stroke="#1C2633" stroke-width="1.5"/>
-    <circle cx="-28" cy="28" r="1.8" fill="#21262D" stroke="#FACC15" stroke-width="0.6" stroke-opacity="0.5"/>
+    <!-- ── CIRCUIT TRACES (arms) ── -->
+    <!-- All arms share the same visual rhythm: dark stroke base, thin yellow dash -->
+    <!-- TR arm -->
+    <line x1="11" y1="-11" x2="64" y2="-64" stroke="#141C26" stroke-width="3"/>
+    <line x1="11" y1="-11" x2="64" y2="-64" stroke="#FACC15" stroke-width="0.7" stroke-dasharray="5 3" stroke-opacity="0.35"/>
+    <!-- BR arm -->
+    <line x1="11" y1="11" x2="64" y2="64" stroke="#141C26" stroke-width="3"/>
+    <line x1="11" y1="11" x2="64" y2="64" stroke="#21262D" stroke-width="0.7" stroke-dasharray="5 3"/>
+    <!-- BL arm -->
+    <line x1="-11" y1="11" x2="-64" y2="64" stroke="#141C26" stroke-width="3"/>
+    <line x1="-11" y1="11" x2="-64" y2="64" stroke="#FACC15" stroke-width="0.7" stroke-dasharray="5 3" stroke-opacity="0.35"/>
+    <!-- TL arm -->
+    <line x1="-11" y1="-11" x2="-64" y2="-64" stroke="#141C26" stroke-width="3"/>
+    <line x1="-11" y1="-11" x2="-64" y2="-64" stroke="#21262D" stroke-width="0.7" stroke-dasharray="5 3"/>
 
-    <!-- Trace from body to top-left -->
-    <polyline points="-10,-10 -28,-28 -62,-62" fill="none" stroke="#1C2633" stroke-width="1.5"/>
-    <circle cx="-28" cy="-28" r="1.8" fill="#21262D" stroke="#21262D" stroke-width="0.6"/>
+    <!-- PCB joint nodes on arms -->
+    <circle cx="30"  cy="-30"  r="2" fill="#161B22" stroke="#FACC15" stroke-width="0.7" stroke-opacity="0.5"/>
+    <circle cx="30"  cy="30"   r="2" fill="#161B22" stroke="#21262D" stroke-width="0.7"/>
+    <circle cx="-30" cy="30"   r="2" fill="#161B22" stroke="#FACC15" stroke-width="0.7" stroke-opacity="0.5"/>
+    <circle cx="-30" cy="-30"  r="2" fill="#161B22" stroke="#21262D" stroke-width="0.7"/>
 
-    <!-- ── AIRFRAME BODY ── -->
-    <polygon points="0,-15 12,-12 15,0 12,12 0,15 -12,12 -15,0 -12,-12"
-             fill="#070B12" stroke="#FACC15" stroke-width="1.4" filter="url(#glow)"/>
-    <!-- Inner body detail -->
+    <!-- ── AIRFRAME ── -->
+    <polygon points="0,-16 13,-13 16,0 13,13 0,16 -13,13 -16,0 -13,-13"
+             fill="#05080F" stroke="#FACC15" stroke-width="1.5" filter="url(#glow)"/>
     <polygon points="0,-9 7,-7 9,0 7,7 0,9 -7,7 -9,0 -7,-7"
-             fill="none" stroke="#1C2633" stroke-width="0.8"/>
-    <!-- Center node -->
-    <circle cx="0" cy="0" r="3.5" fill="#FACC15" filter="url(#softGlow)"/>
+             fill="none" stroke="#1C2128" stroke-width="0.8"/>
+    <circle cx="0" cy="0" r="3.5" fill="#FACC15" filter="url(#dimglow)"/>
 
-    <!-- ── ROTOR NACELLES ── -->
-    <!-- Top-Right rotor -->
-    <circle cx="62" cy="-62" r="8"  fill="#0A0E16" stroke="#FACC15" stroke-width="1.3" filter="url(#glow)"/>
-    <circle cx="62" cy="-62" r="26" fill="none"   stroke="#FACC15" stroke-width="0.7"
-            stroke-dasharray="3 5" stroke-opacity="0.5"/>
-    <line x1="40" y1="-84" x2="84" y2="-40" stroke="#1C2633" stroke-width="1" stroke-opacity="0.6"/>
-    <circle cx="62" cy="-62" r="2.5" fill="#FACC15"/>
+    <!-- ── ROTORS — alternating accent / muted ── -->
+    <!-- TR (accent) -->
+    <circle cx="64" cy="-64" r="8"  fill="#08101C" stroke="#FACC15" stroke-width="1.3" filter="url(#glow)"/>
+    <circle cx="64" cy="-64" r="27" fill="none" stroke="#FACC15" stroke-width="0.6" stroke-dasharray="3 5" stroke-opacity="0.5"/>
+    <circle cx="64" cy="-64" r="2.5" fill="#FACC15"/>
 
-    <!-- Bottom-Right rotor -->
-    <circle cx="62" cy="62"  r="8"  fill="#0A0E16" stroke="#30363D" stroke-width="1.3"/>
-    <circle cx="62" cy="62"  r="26" fill="none"   stroke="#30363D" stroke-width="0.7"
-            stroke-dasharray="3 5" stroke-opacity="0.4"/>
-    <line x1="40" y1="40" x2="84" y2="84" stroke="#1C2633" stroke-width="1" stroke-opacity="0.6"/>
-    <circle cx="62" cy="62" r="2.5" fill="#30363D"/>
+    <!-- BR (muted) -->
+    <circle cx="64" cy="64"  r="8"  fill="#08101C" stroke="#2D333B" stroke-width="1.3"/>
+    <circle cx="64" cy="64"  r="27" fill="none" stroke="#2D333B" stroke-width="0.6" stroke-dasharray="3 5" stroke-opacity="0.5"/>
+    <circle cx="64" cy="64"  r="2.5" fill="#2D333B"/>
 
-    <!-- Bottom-Left rotor -->
-    <circle cx="-62" cy="62"  r="8"  fill="#0A0E16" stroke="#FACC15" stroke-width="1.3" filter="url(#glow)"/>
-    <circle cx="-62" cy="62"  r="26" fill="none"   stroke="#FACC15" stroke-width="0.7"
-            stroke-dasharray="3 5" stroke-opacity="0.5"/>
-    <line x1="-84" y1="40" x2="-40" y2="84" stroke="#1C2633" stroke-width="1" stroke-opacity="0.6"/>
-    <circle cx="-62" cy="62" r="2.5" fill="#FACC15"/>
+    <!-- BL (accent) -->
+    <circle cx="-64" cy="64"  r="8"  fill="#08101C" stroke="#FACC15" stroke-width="1.3" filter="url(#glow)"/>
+    <circle cx="-64" cy="64"  r="27" fill="none" stroke="#FACC15" stroke-width="0.6" stroke-dasharray="3 5" stroke-opacity="0.5"/>
+    <circle cx="-64" cy="64"  r="2.5" fill="#FACC15"/>
 
-    <!-- Top-Left rotor -->
-    <circle cx="-62" cy="-62" r="8"  fill="#0A0E16" stroke="#30363D" stroke-width="1.3"/>
-    <circle cx="-62" cy="-62" r="26" fill="none"   stroke="#30363D" stroke-width="0.7"
-            stroke-dasharray="3 5" stroke-opacity="0.4"/>
-    <line x1="-84" y1="-84" x2="-40" y2="-40" stroke="#1C2633" stroke-width="1" stroke-opacity="0.6"/>
-    <circle cx="-62" cy="-62" r="2.5" fill="#30363D"/>
+    <!-- TL (muted) -->
+    <circle cx="-64" cy="-64" r="8"  fill="#08101C" stroke="#2D333B" stroke-width="1.3"/>
+    <circle cx="-64" cy="-64" r="27" fill="none" stroke="#2D333B" stroke-width="0.6" stroke-dasharray="3 5" stroke-opacity="0.5"/>
+    <circle cx="-64" cy="-64" r="2.5" fill="#2D333B"/>
 
-    <!-- Heading arrow (forward vector) -->
-    <polygon points="-3,-15 0,-27 3,-15" fill="#FACC15" filter="url(#glow)"/>
+    <!-- Heading indicator -->
+    <polygon points="-3,-16 0,-28 3,-16" fill="#FACC15" filter="url(#glow)"/>
 
-    <!-- ── TELEMETRY CALLOUTS ── -->
-    <!-- Top-right callout -->
-    <polyline points="62,-70 90,-96 138,-96"
-              fill="none" stroke="#FACC15" stroke-width="0.7" stroke-opacity="0.55"/>
-    <rect x="138" y="-107" width="88" height="18" rx="2"
-          fill="#070B12" stroke="#21262D" stroke-width="0.8"/>
-    <text x="144" y="-94"
-      font-family="'JetBrains Mono',monospace" font-size="8" fill="#FACC15"
-      font-weight="500" letter-spacing="0.5">PX4 AUTOPILOT</text>
+    <!-- ── CALLOUT TAGS ── -->
+    <!-- TR callout -->
+    <polyline points="64,-72 92,-98 142,-98"
+              fill="none" stroke="#FACC15" stroke-width="0.65" stroke-opacity="0.5"/>
+    <rect x="142" y="-109" width="90" height="17" rx="2"
+          fill="#05080F" stroke="#1C2128" stroke-width="0.8"/>
+    <text x="149" y="-97"
+      font-family="'SF Mono','JetBrains Mono',monospace"
+      font-size="7.5" fill="#FACC15" letter-spacing="0.5">PX4  AUTOPILOT</text>
 
     <!-- Left callout -->
-    <polyline points="-14,-12 -96,-44 -138,-44"
-              fill="none" stroke="#30363D" stroke-width="0.7"/>
-    <rect x="-222" y="-55" width="84" height="18" rx="2"
-          fill="#070B12" stroke="#21262D" stroke-width="0.8"/>
-    <text x="-217" y="-42"
-      font-family="'JetBrains Mono',monospace" font-size="8" fill="#484F58"
-      letter-spacing="0.5">MAVLink 2.0</text>
+    <polyline points="-14,-12 -96,-42 -140,-42"
+              fill="none" stroke="#2D333B" stroke-width="0.65"/>
+    <rect x="-218" y="-53" width="78" height="17" rx="2"
+          fill="#05080F" stroke="#1C2128" stroke-width="0.8"/>
+    <text x="-211" y="-41"
+      font-family="'SF Mono','JetBrains Mono',monospace"
+      font-size="7.5" fill="#484F58" letter-spacing="0.5">MAVLink 2.0</text>
 
-    <!-- Bottom-right callout -->
-    <polyline points="62,70 90,96 138,96"
-              fill="none" stroke="#30363D" stroke-width="0.7"/>
-    <rect x="138" y="86" width="80" height="18" rx="2"
-          fill="#070B12" stroke="#21262D" stroke-width="0.8"/>
-    <text x="144" y="99"
-      font-family="'JetBrains Mono',monospace" font-size="8" fill="#484F58"
-      letter-spacing="0.5">ROS 2 Bridge</text>
+    <!-- BR callout -->
+    <polyline points="64,72 92,98 142,98"
+              fill="none" stroke="#2D333B" stroke-width="0.65"/>
+    <rect x="142" y="89" width="76" height="17" rx="2"
+          fill="#05080F" stroke="#1C2128" stroke-width="0.8"/>
+    <text x="149" y="101"
+      font-family="'SF Mono','JetBrains Mono',monospace"
+      font-size="7.5" fill="#484F58" letter-spacing="0.5">ROS 2 Bridge</text>
+
   </g>
 
-  <!-- ── FOOTER ── -->
-  <text x="56" y="291"
-    font-family="'JetBrains Mono',monospace" font-size="9" fill="#21262D" letter-spacing="1.2">
-    INDIA — 19.076°N  72.877°E
+  <!-- FOOTER coords -->
+  <text x="52" y="272"
+    font-family="'SF Mono','JetBrains Mono',monospace"
+    font-size="8.5" fill="#1C2128" letter-spacing="1.5">
+    19.076°N  72.877°E  —  PUNE, INDIA
   </text>
-  <text x="1144" y="291"
-    font-family="'JetBrains Mono',monospace" font-size="9" fill="#21262D"
-    letter-spacing="1" text-anchor="end">
-    REV 4.0
-  </text>
+
 </svg>
