@@ -1,229 +1,153 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="100%">
   <defs>
-    <!-- Background Grid Pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.6" stroke-opacity="0.6"/>
-      <circle cx="40" cy="40" r="1" fill="#334155" fill-opacity="0.8"/>
-    </pattern>
-    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#334155" fill-opacity="0.3"/>
+    <!-- Technical Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1E293B" stroke-width="0.5" stroke-opacity="0.5"/>
+      <circle cx="30" cy="30" r="0.8" fill="#334155" fill-opacity="0.6"/>
     </pattern>
 
-    <!-- Linear & Radial Gradients -->
+    <!-- Gradients -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B0F17"/>
+      <stop offset="0%" stop-color="#080C14"/>
       <stop offset="50%" stop-color="#0D1117"/>
-      <stop offset="100%" stop-color="#080C14"/>
+      <stop offset="100%" stop-color="#090D16"/>
     </linearGradient>
 
-    <linearGradient id="yellowFade" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FACC15" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#FACC15" stop-opacity="0"/>
-    </linearGradient>
-
-    <radialGradient id="radarSweep" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.15"/>
-      <stop offset="70%" stop-color="#FACC15" stop-opacity="0.03"/>
-      <stop offset="100%" stop-color="#FACC15" stop-opacity="0"/>
+    <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.12"/>
+      <stop offset="80%" stop-color="#FACC15" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
-  <!-- Container Base -->
-  <rect width="1200" height="360" rx="12" fill="url(#bgGrad)" stroke="#1F2937" stroke-width="1.5"/>
+  <!-- Outer Frame & Base -->
+  <rect width="1200" height="340" rx="10" fill="url(#bgGrad)" stroke="#1F2937" stroke-width="1.5"/>
+  <rect width="1200" height="340" rx="10" fill="url(#grid)"/>
 
-  <!-- Grid Layer -->
-  <rect width="1200" height="360" rx="12" fill="url(#grid)"/>
+  <!-- Precision Corner Markers -->
+  <path d="M 16 36 L 16 16 L 36 16" fill="none" stroke="#FACC15" stroke-width="2" stroke-opacity="0.9"/>
+  <path d="M 1184 36 L 1184 16 L 1164 16" fill="none" stroke="#FACC15" stroke-width="2" stroke-opacity="0.9"/>
+  <path d="M 16 304 L 16 324 L 36 324" fill="none" stroke="#FACC15" stroke-width="2" stroke-opacity="0.9"/>
+  <path d="M 1184 304 L 1184 324 L 1164 324" fill="none" stroke="#FACC15" stroke-width="2" stroke-opacity="0.9"/>
 
-  <!-- Subtle Accent Corner Framing -->
-  <path d="M 12 40 L 12 12 L 40 12" fill="none" stroke="#FACC15" stroke-width="2" stroke-opacity="0.8"/>
-  <path d="M 1188 40 L 1188 12 L 1160 12" fill="none" stroke="#FACC15" stroke-width="2" stroke-opacity="0.8"/>
-  <path d="M 12 320 L 12 348 L 40 348" fill="none" stroke="#FACC15" stroke-width="2" stroke-opacity="0.8"/>
-  <path d="M 1188 320 L 1188 348 L 1160 348" fill="none" stroke="#FACC15" stroke-width="2" stroke-opacity="0.8"/>
+  <line x1="50" y1="24" x2="1150" y2="24" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <line x1="50" y1="316" x2="1150" y2="316" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="3 3"/>
 
-  <!-- Technical Crosshairs & Corner Ticks -->
-  <line x1="60" y1="20" x2="1140" y2="20" stroke="#1E293B" stroke-width="1" stroke-dasharray="4 4"/>
-  <line x1="60" y1="340" x2="1140" y2="340" stroke="#1E293B" stroke-width="1" stroke-dasharray="4 4"/>
+  <!-- ================= RIGHT SIDE: RADAR & DRONE WIREFRAME ================= -->
+  <g transform="translate(930, 170)">
+    <!-- Radar Base -->
+    <circle cx="0" cy="0" r="145" fill="url(#radarGlow)"/>
+    <circle cx="0" cy="0" r="145" fill="none" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 4"/>
+    <circle cx="0" cy="0" r="105" fill="none" stroke="#1E293B" stroke-width="0.8"/>
+    <circle cx="0" cy="0" r="65" fill="none" stroke="#FACC15" stroke-width="0.8" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#334155" stroke-width="0.8"/>
 
-  <!-- ==================== RIGHT SIDE: RADAR & DRONE WIREFRAME ==================== -->
-  <g transform="translate(910, 180)">
-    <!-- Radar Background Glow & Rings -->
-    <circle cx="0" cy="0" r="160" fill="url(#radarSweep)"/>
-    <circle cx="0" cy="0" r="160" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="3 3"/>
-    <circle cx="0" cy="0" r="120" fill="none" stroke="#1E293B" stroke-width="1"/>
-    <circle cx="0" cy="0" r="80" fill="none" stroke="#FACC15" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="6 4"/>
-    <circle cx="0" cy="0" r="40" fill="none" stroke="#334155" stroke-width="1"/>
-    <circle cx="0" cy="0" r="4" fill="#FACC15" fill-opacity="0.6"/>
+    <!-- Crosshairs & Vectors -->
+    <line x1="-155" y1="0" x2="155" y2="0" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 3"/>
+    <line x1="0" y1="-155" x2="0" y2="155" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 3"/>
+    
+    <!-- Sweep Ray -->
+    <line x1="0" y1="0" x2="98" y2="-98" stroke="#FACC15" stroke-width="1.2" stroke-opacity="0.8"/>
+    <circle cx="98" cy="-98" r="3" fill="#FACC15"/>
 
-    <!-- Radar Crosshairs -->
-    <line x1="-170" y1="0" x2="170" y2="0" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 4"/>
-    <line x1="0" y1="-170" x2="0" y2="170" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 4"/>
-    <line x1="-120" y1="-120" x2="120" y2="120" stroke="#1E293B" stroke-width="0.6" stroke-dasharray="2 4"/>
-    <line x1="-120" y1="120" x2="120" y2="-120" stroke="#1E293B" stroke-width="0.6" stroke-dasharray="2 4"/>
+    <!-- UAV Quadcopter Wireframe -->
+    <g id="drone-graphics">
+      <!-- Main Octagon Airframe -->
+      <polygon points="0,-18 13,-13 18,0 13,13 0,18 -13,13 -18,0 -13,-13" fill="#0D1117" stroke="#FACC15" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="4" fill="#FACC15"/>
 
-    <!-- Radar Angle Callouts -->
-    <text x="0" y="-165" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="9" fill="#64748B" text-anchor="middle">000° N</text>
-    <text x="165" y="3" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="9" fill="#64748B" text-anchor="start">090° E</text>
-    <text x="0" y="173" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="9" fill="#64748B" text-anchor="middle">180° S</text>
-    <text x="-165" y="3" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="9" fill="#64748B" text-anchor="end">270° W</text>
+      <!-- Quad Spar Arms -->
+      <line x1="10" y1="-10" x2="65" y2="-65" stroke="#94A3B8" stroke-width="2.5"/>
+      <line x1="10" y1="10" x2="65" y2="65" stroke="#94A3B8" stroke-width="2.5"/>
+      <line x1="-10" y1="10" x2="-65" y2="65" stroke="#94A3B8" stroke-width="2.5"/>
+      <line x1="-10" y1="-10" x2="-65" y2="-65" stroke="#94A3B8" stroke-width="2.5"/>
 
-    <!-- Radar Sweep Line -->
-    <line x1="0" y1="0" x2="113" y2="-113" stroke="#FACC15" stroke-width="1.5" stroke-opacity="0.7"/>
-    <circle cx="113" cy="-113" r="3" fill="#FACC15"/>
-    <circle cx="113" cy="-113" r="7" fill="none" stroke="#FACC15" stroke-width="0.8" stroke-opacity="0.5"/>
+      <!-- Inner Accent Lines -->
+      <line x1="10" y1="-10" x2="65" y2="-65" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="3 2"/>
+      <line x1="10" y1="10" x2="65" y2="65" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="3 2"/>
+      <line x1="-10" y1="10" x2="-65" y2="65" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="3 2"/>
+      <line x1="-10" y1="-10" x2="-65" y2="-65" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="3 2"/>
 
-    <!-- ================= DRONE WIREFRAME (QUADCOPTER) ================= -->
-    <g id="drone-wireframe">
-      <!-- Central Chassis Octagon -->
-      <polygon points="0,-22 16,-16 22,0 16,16 0,22 -16,16 -22,0 -16,-16" fill="#0D1117" stroke="#FACC15" stroke-width="1.5"/>
-      <polygon points="0,-14 10,-10 14,0 10,10 0,14 -10,10 -14,0 -10,-10" fill="none" stroke="#475569" stroke-width="1"/>
-      <circle cx="0" cy="0" r="5" fill="#FACC15" fill-opacity="0.8"/>
+      <!-- Rotor Nacelles & Propeller Arcs -->
+      <!-- Rotor 1 -->
+      <circle cx="65" cy="-65" r="9" fill="#1E293B" stroke="#FACC15" stroke-width="1.2"/>
+      <circle cx="65" cy="-65" r="30" fill="none" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="4 4" stroke-opacity="0.6"/>
+      <circle cx="65" cy="-65" r="2.5" fill="#FACC15"/>
 
-      <!-- Quad Arms (4 Rotors) -->
-      <!-- Arm 1: Top-Right -->
-      <line x1="12" y1="-12" x2="75" y2="-75" stroke="#94A3B8" stroke-width="2.5"/>
-      <line x1="12" y1="-12" x2="75" y2="-75" stroke="#FACC15" stroke-width="1" stroke-dasharray="4 2"/>
-      <!-- Arm 2: Bottom-Right -->
-      <line x1="12" y1="12" x2="75" y2="75" stroke="#94A3B8" stroke-width="2.5"/>
-      <line x1="12" y1="12" x2="75" y2="75" stroke="#FACC15" stroke-width="1" stroke-dasharray="4 2"/>
-      <!-- Arm 3: Bottom-Left -->
-      <line x1="-12" y1="12" x2="-75" y2="75" stroke="#94A3B8" stroke-width="2.5"/>
-      <line x1="-12" y1="12" x2="-75" y2="75" stroke="#FACC15" stroke-width="1" stroke-dasharray="4 2"/>
-      <!-- Arm 4: Top-Left -->
-      <line x1="-12" y1="-12" x2="-75" y2="-75" stroke="#94A3B8" stroke-width="2.5"/>
-      <line x1="-12" y1="-12" x2="-75" y2="-75" stroke="#FACC15" stroke-width="1" stroke-dasharray="4 2"/>
+      <!-- Rotor 2 -->
+      <circle cx="65" cy="65" r="9" fill="#1E293B" stroke="#FACC15" stroke-width="1.2"/>
+      <circle cx="65" cy="65" r="30" fill="none" stroke="#64748B" stroke-width="0.8" stroke-dasharray="4 4" stroke-opacity="0.6"/>
+      <circle cx="65" cy="65" r="2.5" fill="#FACC15"/>
 
-      <!-- Rotor Motors & Propellers -->
-      <!-- Rotor 1 (Top-Right) -->
-      <circle cx="75" cy="-75" r="10" fill="#1E293B" stroke="#FACC15" stroke-width="1.5"/>
-      <circle cx="75" cy="-75" r="35" fill="none" stroke="#FACC15" stroke-width="1" stroke-dasharray="5 5" stroke-opacity="0.6"/>
-      <line x1="50" y1="-100" x2="100" y2="-50" stroke="#94A3B8" stroke-width="1.2" stroke-opacity="0.7"/>
-      <circle cx="75" cy="-75" r="3" fill="#FACC15"/>
+      <!-- Rotor 3 -->
+      <circle cx="-65" cy="65" r="9" fill="#1E293B" stroke="#FACC15" stroke-width="1.2"/>
+      <circle cx="-65" cy="65" r="30" fill="none" stroke="#FACC15" stroke-width="0.8" stroke-dasharray="4 4" stroke-opacity="0.6"/>
+      <circle cx="-65" cy="65" r="2.5" fill="#FACC15"/>
 
-      <!-- Rotor 2 (Bottom-Right) -->
-      <circle cx="75" cy="75" r="10" fill="#1E293B" stroke="#FACC15" stroke-width="1.5"/>
-      <circle cx="75" cy="75" r="35" fill="none" stroke="#64748B" stroke-width="1" stroke-dasharray="5 5" stroke-opacity="0.6"/>
-      <line x1="50" y1="50" x2="100" y2="100" stroke="#94A3B8" stroke-width="1.2" stroke-opacity="0.7"/>
-      <circle cx="75" cy="75" r="3" fill="#FACC15"/>
+      <!-- Rotor 4 -->
+      <circle cx="-65" cy="-65" r="9" fill="#1E293B" stroke="#FACC15" stroke-width="1.2"/>
+      <circle cx="-65" cy="-65" r="30" fill="none" stroke="#64748B" stroke-width="0.8" stroke-dasharray="4 4" stroke-opacity="0.6"/>
+      <circle cx="-65" cy="-65" r="2.5" fill="#FACC15"/>
 
-      <!-- Rotor 3 (Bottom-Left) -->
-      <circle cx="-75" cy="75" r="10" fill="#1E293B" stroke="#FACC15" stroke-width="1.5"/>
-      <circle cx="-75" cy="75" r="35" fill="none" stroke="#FACC15" stroke-width="1" stroke-dasharray="5 5" stroke-opacity="0.6"/>
-      <line x1="-100" y1="50" x2="-50" y2="100" stroke="#94A3B8" stroke-width="1.2" stroke-opacity="0.7"/>
-      <circle cx="-75" cy="75" r="3" fill="#FACC15"/>
+      <!-- Forward Heading Vector -->
+      <polygon points="-4,-18 0,-28 4,-18" fill="#FACC15"/>
 
-      <!-- Rotor 4 (Top-Left) -->
-      <circle cx="-75" cy="-75" r="10" fill="#1E293B" stroke="#FACC15" stroke-width="1.5"/>
-      <circle cx="-75" cy="-75" r="35" fill="none" stroke="#64748B" stroke-width="1" stroke-dasharray="5 5" stroke-opacity="0.6"/>
-      <line x1="-100" y1="-100" x2="-50" y2="-50" stroke="#94A3B8" stroke-width="1.2" stroke-opacity="0.7"/>
-      <circle cx="-75" cy="-75" r="3" fill="#FACC15"/>
+      <!-- Telemetry Tags -->
+      <polyline points="65,-75 95,-100 145,-100" fill="none" stroke="#FACC15" stroke-width="0.8"/>
+      <rect x="145" y="-111" width="115" height="20" rx="3" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <text x="152" y="-97" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FACC15" font-weight="600">SYS_ALT: 120M</text>
 
-      <!-- Gimbal Nose Camera (Forward Vector) -->
-      <path d="M -6,-22 L 0,-34 L 6,-22 Z" fill="#FACC15"/>
-      <circle cx="0" cy="-34" r="3" fill="#0D1117" stroke="#FACC15" stroke-width="1"/>
-
-      <!-- Telemetry Callout Leader Lines -->
-      <!-- Callout 1: Motor 01 -->
-      <polyline points="75,-85 110,-115 170,-115" fill="none" stroke="#FACC15" stroke-width="1" stroke-opacity="0.8"/>
-      <circle cx="75" cy="-85" r="2" fill="#FACC15"/>
-      <rect x="170" y="-127" width="125" height="22" rx="4" fill="#0F172A" stroke="#334155" stroke-width="1"/>
-      <text x="178" y="-112" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FACC15" font-weight="600">SYS_MTR: 8,400 RPM</text>
-
-      <!-- Callout 2: FC Core -->
-      <polyline points="-16,-16 -130,-50 -190,-50" fill="none" stroke="#64748B" stroke-width="1"/>
-      <circle cx="-16" cy="-16" r="2" fill="#FACC15"/>
-      <rect x="-310" y="-62" width="120" height="22" rx="4" fill="#0F172A" stroke="#334155" stroke-width="1"/>
-      <text x="-302" y="-47" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">FC: PX4 AUTOPILOT</text>
-
-      <!-- Callout 3: Battery Telemetry -->
-      <polyline points="75,85 120,115 170,115" fill="none" stroke="#64748B" stroke-width="1"/>
-      <circle cx="75" cy="85" r="2" fill="#FACC15"/>
-      <rect x="170" y="103" width="125" height="22" rx="4" fill="#0F172A" stroke="#334155" stroke-width="1"/>
-      <text x="178" y="118" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38BDF8">BAT: 98.4% [22.2V]</text>
+      <polyline points="-13,-13 -100,-45 -145,-45" fill="none" stroke="#64748B" stroke-width="0.8"/>
+      <rect x="-250" y="-56" width="105" height="20" rx="3" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <text x="-243" y="-42" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">MODE: AUTONOMOUS</text>
     </g>
   </g>
 
-  <!-- ==================== LEFT SIDE: MISSION CONTROL UI ==================== -->
-  <g transform="translate(60, 45)">
-    <!-- Top System Status pill -->
+  <!-- ================= LEFT SIDE: TYPOGRAPHY & HUD ================= -->
+  <g transform="translate(60, 50)">
+    <!-- Header Status -->
     <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="260" height="26" rx="13" fill="#1E293B" fill-opacity="0.6" stroke="#334155" stroke-width="1"/>
-      <circle cx="15" cy="13" r="4" fill="#FACC15">
-        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <text x="28" y="17" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#FACC15" font-weight="700" letter-spacing="1">SYS.ON // MISSION CONTROL</text>
-      <text x="205" y="17" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">v2.4</text>
+      <rect x="0" y="0" width="220" height="24" rx="4" fill="#1E293B" fill-opacity="0.6" stroke="#334155" stroke-width="1"/>
+      <circle cx="12" cy="12" r="3.5" fill="#FACC15"/>
+      <text x="24" y="16" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FACC15" font-weight="700" letter-spacing="1">SYSTEM ONLINE // CORE</text>
     </g>
 
-    <!-- Main Title (Name) -->
-    <text x="0" y="70" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="38" font-weight="800" fill="#F8FAFC" letter-spacing="0.5">
+    <!-- Name -->
+    <text x="0" y="66" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="0.5">
       Harshwardhan Karanje
     </text>
 
-    <!-- Subtitle / Role -->
-    <g transform="translate(0, 84)">
-      <text x="0" y="20" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="15" font-weight="700" fill="#FACC15" letter-spacing="1">
-        COMPUTER ENGINEERING STUDENT
+    <!-- Title -->
+    <text x="0" y="96" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#FACC15" letter-spacing="1">
+      COMPUTER ENGINEERING STUDENT
+    </text>
+
+    <!-- Specs Divider Line -->
+    <line x1="0" y1="115" x2="440" y2="115" stroke="#334155" stroke-width="1.2"/>
+    <line x1="0" y1="115" x2="100" y2="115" stroke="#FACC15" stroke-width="2"/>
+
+    <!-- Focus Tags -->
+    <text x="0" y="138" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" fill="#94A3B8">
+      FOCUS: <tspan fill="#F8FAFC">AI</tspan> • <tspan fill="#F8FAFC">ROBOTICS</tspan> • <tspan fill="#F8FAFC">UAV SYSTEMS</tspan> • <tspan fill="#F8FAFC">EMBEDDED</tspan>
+    </text>
+
+    <!-- Sleek Tech Box -->
+    <g transform="translate(0, 160)">
+      <rect x="0" y="0" width="440" height="60" rx="6" fill="#0F172A" fill-opacity="0.85" stroke="#1E293B" stroke-width="1.2"/>
+      <path d="M 0 0 L 60 0" stroke="#FACC15" stroke-width="2"/>
+      
+      <text x="14" y="24" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#CBD5E1">
+        ENGINEERING: <tspan fill="#FACC15">Autonomous UAVs &amp; Flight Avionics</tspan>
+      </text>
+      <text x="14" y="44" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#CBD5E1">
+        CORE STACK: <tspan fill="#38BDF8">C++ / Python / ROS 2 / PyTorch / ESP32</tspan>
       </text>
     </g>
-
-    <!-- Focus Tags & Divider Line -->
-    <g transform="translate(0, 122)">
-      <line x1="0" y1="0" x2="480" y2="0" stroke="#334155" stroke-width="1.5"/>
-      <line x1="0" y1="0" x2="120" y2="0" stroke="#FACC15" stroke-width="2"/>
-      
-      <!-- Tech Domain Pills -->
-      <g transform="translate(0, 16)">
-        <text x="0" y="12" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#94A3B8">
-          FOCUS: <tspan fill="#F8FAFC">AI</tspan> • <tspan fill="#F8FAFC">ROBOTICS</tspan> • <tspan fill="#F8FAFC">UAV SYSTEMS</tspan> • <tspan fill="#F8FAFC">EMBEDDED</tspan>
-        </text>
-      </g>
-    </g>
-
-    <!-- Bottom Telemetry HUD Box -->
-    <g transform="translate(0, 175)">
-      <rect x="0" y="0" width="460" height="74" rx="8" fill="#0F172A" fill-opacity="0.8" stroke="#1E293B" stroke-width="1.5"/>
-      
-      <!-- Box Top Accent Line -->
-      <path d="M 0 0 L 80 0" stroke="#FACC15" stroke-width="2"/>
-
-      <!-- HUD Metric Lines -->
-      <g transform="translate(16, 22)">
-        <!-- Metric 1 -->
-        <circle cx="4" cy="4" r="3" fill="#FACC15"/>
-        <text x="14" y="8" font-family="'JetBrains Mono', monospace" font-size="11" fill="#CBD5E1">
-          SPECS: <tspan fill="#FACC15" font-weight="600">Autonomous UAVs &amp; Flight Controls</tspan>
-        </text>
-
-        <!-- Metric 2 -->
-        <circle cx="4" cy="26" r="3" fill="#38BDF8"/>
-        <text x="14" y="30" font-family="'JetBrains Mono', monospace" font-size="11" fill="#CBD5E1">
-          STACK: <tspan fill="#38BDF8">C++ / Python / ROS 2 / PyTorch / ESP32</tspan>
-        </text>
-
-        <!-- Metric 3 -->
-        <circle cx="4" cy="48" r="3" fill="#4ADE80"/>
-        <text x="14" y="52" font-family="'JetBrains Mono', monospace" font-size="11" fill="#CBD5E1">
-          STATUS: <tspan fill="#4ADE80">Ready for Engineering Challenges</tspan>
-        </text>
-      </g>
-    </g>
   </g>
 
-  <!-- Circuit Traces Connecting UI to Center/Right -->
-  <g stroke="#334155" stroke-width="1" fill="none">
-    <polyline points="520,260 580,260 620,210 680,210"/>
-    <circle cx="520" cy="260" r="2.5" fill="#FACC15"/>
-    <circle cx="680" cy="210" r="2.5" fill="#FACC15"/>
-
-    <polyline points="520,230 560,230 590,170 650,170"/>
-    <circle cx="520" cy="230" r="2" fill="#38BDF8"/>
-    <circle cx="650" cy="170" r="2" fill="#38BDF8"/>
-  </g>
-
-  <!-- Bottom Technical Footer Bar -->
-  <g transform="translate(60, 328)">
-    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="10" fill="#475569">
-      LAT: 19.0760° N | LON: 72.8777° E | ALT: 120M | FLIGHT MODE: GUIDED | SIGNAL: 100%
+  <!-- Technical Telemetry Footer -->
+  <g transform="translate(60, 305)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#475569">
+      LAT: 19.0760° N | LON: 72.8777° E | ALT: 120M | STATUS: ACTIVE
     </text>
   </g>
 </svg>
